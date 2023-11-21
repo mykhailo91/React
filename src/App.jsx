@@ -1,16 +1,16 @@
 import Header from './components/Header/Header';
 import Courses from './components/Courses/Courses';
-import PageActions from './components/PageActions/PageActions';
 import styles from './App.css';
+import CourseInfoList from './components/CoursesInfoList/CoursesInfoList';
 
 function App() {
 	return (
 		<>
 			<Header name='Mykhailo' />
 			<main className={styles}>
-				<PageActions />
 				<Courses />
 			</main>
+			<CourseInfoList />
 		</>
 	);
 }
