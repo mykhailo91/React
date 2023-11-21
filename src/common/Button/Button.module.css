@@ -1,5 +1,9 @@
 .btnPrimary {
-    padding: 13px 36px;
+    padding: 13px 26px;
     border-radius: 4px;
     background: #007298;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 0;
 }

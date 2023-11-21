@@ -1,0 +1,13 @@
+.PageActions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.PageActions input {
+    width: 400px;
+}
+
+.SearchBar {
+    display: flex;
+    gap: 16px;
+}

@@ -7,7 +7,6 @@ const CourseInfo = () => {
 			<div>Course duration</div>
 			<div>Creation date</div>
 			<div>Course authors</div>
-			<button>Back Button</button>
 		</section>
 	);
 };

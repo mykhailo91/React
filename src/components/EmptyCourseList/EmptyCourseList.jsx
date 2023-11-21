@@ -1,9 +1,11 @@
+import Button from './../../common/Button/Button';
+
 const EmptyCourseList = () => {
 	return (
 		<section>
 			<div>Title</div>
 			<div>Subtitle</div>
-			<button>Add New Course</button>
+			<Button title={'Add new course'}></Button>
 		</section>
 	);
 };

@@ -1,0 +1,28 @@
+.CourseCard {
+    border: 1px solid #ccc;
+    margin: 32px 0;
+    padding: 30px 30px 35px;
+    border-left: 7px solid #333E48;
+    border-radius: 5px;
+}
+
+.CourseCard > h3 {
+    margin: 0;
+}
+
+.CourseCardWrap {
+    display: flex;
+    gap: 37px;
+}
+
+.CourseCardDescription {
+    width: 677px;
+}
+
+.CourseCardInfo {
+    flex-grow: 1;
+}
+
+.CourseCardActions {
+    display: flex;
+}

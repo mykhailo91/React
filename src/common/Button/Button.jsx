@@ -1,7 +1,7 @@
 import styles from './Button.module.css';
 
-const Button = () => {
-	return <button className={styles.btnPrimary}>Add New Course</button>;
+const Button = ({ title, className }) => {
+	return <button className={styles.btnPrimary}>{title}</button>;
 };
 
 export default Button;

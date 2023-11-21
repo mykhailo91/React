@@ -1,18 +1,17 @@
 import Header from './components/Header/Header';
-import CourseCard from './components/Courses/components/CourseCard/CourseCard';
-import EmptyCourseList from './components/EmptyCourseList/EmptyCourseList';
 import Courses from './components/Courses/Courses';
-import CourseInfo from './components/CourseInfo/CourseInfo';
+import PageActions from './components/PageActions/PageActions';
+import styles from './App.css';
 
 function App() {
 	return (
-		<div>
+		<>
 			<Header name='Mykhailo' />
-			<CourseCard />
-			<EmptyCourseList />
-			<Courses />
-			<CourseInfo />
-		</div>
+			<main className={styles}>
+				<PageActions />
+				<Courses />
+			</main>
+		</>
 	);
 }
 
