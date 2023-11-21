@@ -6,10 +6,10 @@ const PageActions = () => {
 	return (
 		<div className={styles.PageActions}>
 			<div className={styles.SearchBar}>
-				<Input placeholder={'Input text'} />
-				<Button title={'Search'} />
+				<Input placeholder='Input text' />
+				<Button title='Search' />
 			</div>
-			<Button title={'Add new course'} />
+			<Button title='Add new course' />
 		</div>
 	);
 };

@@ -1,3 +1,4 @@
+import React from 'react';
 import Button from './../../../../common/Button/Button';
 import styles from './CourseCard.module.css';
 
@@ -7,6 +8,7 @@ const CourseCard = ({
 	authors,
 	duration,
 	creationDate,
+	onShowCourseInfo,
 }) => {
 	return (
 		<div className={styles.CourseCard}>
@@ -27,9 +29,9 @@ const CourseCard = ({
 						<b>Creation</b> Date: {creationDate}
 					</div>
 					<div className={styles.CourseCardActions}>
-						<Button title={'Show course'} />
-						<Button title={'A'} />
-						<Button title={'B'} />
+						<Button title='Show Course' onClick={onShowCourseInfo} />
+						<Button title='A' />
+						<Button title='B' />
 					</div>
 				</div>
 			</div>

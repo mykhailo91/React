@@ -1,12 +1,14 @@
+import React from 'react';
 import Button from './../../common/Button/Button';
+import Logo from '../Header/components/Logo/Logo';
 import styles from './Header.module.css';
 
 const Header = (props) => {
 	return (
 		<header className={styles.header}>
-			<img src='../../images/Logo.svg' alt='logo' />
+			<Logo />
 			<span>Hello, {props.name}!</span>
-			<Button title={'Logout'} />
+			<Button title='Logout' />
 		</header>
 	);
 };
