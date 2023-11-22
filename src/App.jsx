@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import Courses from './components/Courses/Courses';
+import Registration from './components/Registration/Registration';
+import Login from './components/Login/Login';
+import CreateCourse from './components/CreateCourse/CreateCourse';
 import CourseInfoList from './components/CoursesInfoList/CoursesInfoList';
 import styles from './App.css';
 
@@ -31,6 +34,9 @@ function App() {
 					/>
 				)}
 			</main>
+			<Registration />
+			<Login />
+			<CreateCourse />
 		</>
 	);
 }
