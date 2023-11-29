@@ -1,17 +1,24 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import CourseCard from './../Courses/components/CourseCard/CourseCard';
 import styles from './Courses.module.css';
-import { mockedCoursesList, mockedAuthorsList } from './../../constants';
+import { mockedCoursesList } from '../../constants';
 import PageActions from './../PageActions/PageActions';
 
-const Courses = ({ onShowCourseInfo }) => {
-	const hasCourses = mockedCoursesList.length > 0;
+const Courses = () => {
+	const navigate = useNavigate();
+
+	const hasToken = localStorage.getItem('token');
+
+	const handleAddCourse = () => {
+		navigate('/courses/add');
+	};
 
 	return (
 		<>
-			{hasCourses && <PageActions />}
+			{hasToken && <PageActions />}
 			<section className={styles.courses}>
-				{hasCourses ? (
+				{hasToken ? (
 					mockedCoursesList.map((course) => (
 						<CourseCard
 							key={course.id}
@@ -20,12 +27,13 @@ const Courses = ({ onShowCourseInfo }) => {
 							authors={course.authors}
 							duration={course.duration}
 							creationDate={course.creationDate}
-							onShowCourseInfo={() => onShowCourseInfo(course.id)}
+							onShowCourseInfo={() => navigate(`/courses/${course.id}`)}
 						/>
 					))
 				) : (
 					<div>No courses available</div>
 				)}
+				<button onClick={handleAddCourse}>Add New Course</button>
 			</section>
 		</>
 	);

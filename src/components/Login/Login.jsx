@@ -1,19 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './../../common/Button/Button';
 import Input from './../../common/Input/Input';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
+
+	const handleLogin = () => {
+		if (!email || !password) {
+			setError('Please fill in all fields.');
+			return;
+		}
+		setError('');
+	};
+
 	return (
 		<>
 			<h2>Login</h2>
 			<form>
 				<label htmlFor='email'>Email</label>
-				<Input placeholder='Input email' id='email' />
+				<Input
+					type='text'
+					placeholder='Input email'
+					id='email'
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+				/>
 				<label htmlFor='password'>Password</label>
-				<Input placeholder='Input password' id='password' />
-				<Button title='Login' />
+				<Input
+					type='password'
+					placeholder='Input password'
+					id='password'
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+				{error && <p style={{ color: 'red' }}>{error}</p>}
+				<Button title='Login' onClick={handleLogin} />
 				<p>
-					If you dont have an account you may <b>Registration</b>
+					If you don't have an account you may{' '}
+					<Link to='/registration'>
+						<b>Register</b>
+					</Link>
 				</p>
 			</form>
 		</>

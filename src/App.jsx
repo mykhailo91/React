@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Courses from './components/Courses/Courses';
 import Registration from './components/Registration/Registration';
@@ -23,7 +24,7 @@ function App() {
 
 	return (
 		<>
-			<Header name='Mykhailo' />
+			<Header userName='Mykhailo' />
 			<main>
 				{showCourses ? (
 					<Courses onShowCourseInfo={handleShowCourseInfo} />
@@ -37,6 +38,7 @@ function App() {
 			<Registration />
 			<Login />
 			<CreateCourse />
+			<Navigate to='/login' />
 		</>
 	);
 }

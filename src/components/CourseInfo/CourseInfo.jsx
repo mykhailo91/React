@@ -1,15 +1,19 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Button from './../../common/Button/Button';
 import styles from './Courseinfo.module.css';
 
-const CourseInfo = ({
-	title,
-	description,
-	id,
-	duration,
-	creationDate,
-	authors,
-}) => {
+const CourseInfo = ({ courses }) => {
+	const { courseId } = useParams();
+	const selectedCourse = courses.find((course) => course.id === courseId);
+
+	if (!selectedCourse) {
+		return <div>Course not found</div>;
+	}
+
+	const { title, description, id, duration, creationDate, authors } =
+		selectedCourse;
+
 	return (
 		<>
 			<h3>{title}</h3>
@@ -27,7 +31,7 @@ const CourseInfo = ({
 							<b>Duration:</b> {duration} minutes
 						</div>
 						<div>
-							<b>Creation</b> Date: {creationDate}
+							<b>Creation Date:</b> {creationDate}
 						</div>
 						<div>
 							<b>Authors:</b>{' '}
@@ -36,7 +40,9 @@ const CourseInfo = ({
 					</div>
 				</div>
 			</div>
-			<Button title={'Back'} />
+			<Link to='/courses'>
+				<Button title={'Back'} />
+			</Link>
 		</>
 	);
 };
