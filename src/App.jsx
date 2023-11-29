@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Courses from './components/Courses/Courses';
+import Registration from './components/Registration/Registration';
+import Login from './components/Login/Login';
+import CreateCourse from './components/CreateCourse/CreateCourse';
 import CourseInfoList from './components/CoursesInfoList/CoursesInfoList';
 import styles from './App.css';
 
@@ -20,7 +24,7 @@ function App() {
 
 	return (
 		<>
-			<Header name='Mykhailo' />
+			<Header userName='Mykhailo' />
 			<main>
 				{showCourses ? (
 					<Courses onShowCourseInfo={handleShowCourseInfo} />
@@ -31,6 +35,10 @@ function App() {
 					/>
 				)}
 			</main>
+			<Registration />
+			<Login />
+			<CreateCourse />
+			<Navigate to='/login' />
 		</>
 	);
 }
